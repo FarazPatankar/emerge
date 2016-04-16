@@ -20,7 +20,7 @@ function createMarker(place) {
         });
 }
 
-function callback(results, status) {
+function startSearch(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
     	console.log(results)
         for (var i = 0; i < results.length; i++) {
@@ -46,7 +46,7 @@ function initMap() {
         location: pyrmont,
         radius: 500,
         type: [type]
-    }, callback);
+    }, startSearch);
 }
 
 
@@ -54,6 +54,17 @@ function initMap() {
 $(document).on("ready", function() {
     lat = $('h1').data("lat");
     lng = $('h1').data("lng");
+
+    $('.type-list li input').on('click', function(thing){
+            console.log(thing.currentTarget.id);
+            var selection = thing.currentTarget.id;
+            type = selection;
+            initMap();
+
+    })
+
+
+
 
     $('select').material_select();
 })
