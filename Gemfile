@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
+
 gem 'materialize-sass'
 
 gem 'devise'
