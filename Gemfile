@@ -6,6 +6,8 @@ gem 'materialize-sass'
 
 gem 'devise'
 
+gem 'rest-client'
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
