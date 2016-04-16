@@ -6,6 +6,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  root 'static_pages#home'
+
+  post 'api/v1/pull' => 'visa#pull'
+
+  post 'api/v1/push' => 'visa#push'
+
+  post 'api/v1/reverse' => 'visa#reverse'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
