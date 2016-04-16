@@ -14,9 +14,16 @@ function createMarker(place) {
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(place.name);
+            infowindow.setContent("<p>Name: " + place.name + "</p>" + "<p>Address: " + place.vicinity + "</p>");
             infowindow.open(map, this);
-            console.log(place)
+            console.log(place);
+
+            var request = {
+                placeId: place.place_id
+            };
+
+            var startService = new google.maps.places.PlacesService(map);
+            startService.getDetails(request, getPlace);
         });
 }
 
@@ -50,13 +57,19 @@ function initMap() {
 }
 
 
+function getPlace(place, status){
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        console.log(place)
+    }
+}
+
+
 // STUFF
 $(document).on("ready", function() {
     lat = $('h1').data("lat");
     lng = $('h1').data("lng");
 
     $('.type-list li input').on('click', function(thing){
-            console.log(thing.currentTarget.id);
             var selection = thing.currentTarget.id;
             type = selection;
             initMap();
