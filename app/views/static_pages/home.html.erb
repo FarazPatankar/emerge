@@ -1,0 +1,8 @@
+<h1>Ssup</h1>
+<ul>
+	<%@bootcamps.each do |bootcamp|%>
+	<li>
+		<a href="/bootcamps/<%=bootcamp.id%>"><%=bootcamp.name%></a>
+	</li>
+	<%end%>
+</ul>

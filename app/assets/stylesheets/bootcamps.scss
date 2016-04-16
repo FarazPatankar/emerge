@@ -1,3 +1,13 @@
 // Place all the styles related to the bootcamps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#map {
+	height: 500px;
+	width: 500px;
+}
+
+.type-list li{
+	display: inline;
+	padding: 10px;
+}
