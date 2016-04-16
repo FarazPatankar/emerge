@@ -1,0 +1,2 @@
+class BootcampsController < ApplicationController
+end
