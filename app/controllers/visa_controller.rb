@@ -1,4 +1,5 @@
 class VisaController < ApplicationController
+	
   def pull
 
   	results = VisaApi.new().pullFundsTransaction

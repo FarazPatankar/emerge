@@ -195,20 +195,9 @@ class VisaApi
 		rescue RestClient::ExceptionWithResponse => e
 	    	response = e.response
 	  	end
-	  		puts "URL: " << url
-	  		puts "HEADERS: " << headers.to_s
-	  		puts "BODY: " << body.to_s
+	  		puts response
 	  		return response
 
 	end
-
-
-
-
-
-
-
-
-
 
 end
