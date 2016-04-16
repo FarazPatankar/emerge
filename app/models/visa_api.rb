@@ -66,7 +66,7 @@ class VisaApi
 
 		path = "visadirect/fundstransfer/v1/pullfundstransactions"
 
-		callVisaApi(body, path)
+		callPullApi(body, path)
 
 	end
 
@@ -195,9 +195,39 @@ class VisaApi
 		rescue RestClient::ExceptionWithResponse => e
 	    	response = e.response
 	  	end
-	  		puts "URL: " << url
-	  		puts "HEADERS: " << headers.to_s
-	  		puts "BODY: " << body.to_s
+	  		puts response
+	  		return response
+
+	end
+
+	def callPullApi(body, path)
+
+			url = 'https://sandbox.api.visa.com/' + path
+			user_id = 'QT4SWQXB34M44J2AJS1121VNdpvQXX57ULXHpf3E4CHSWIPog'
+			password = '5A238PyD6O7Wqw'
+			headers = {'content-type'=> 'application/json', 'accept'=> 'application/json'}
+		  
+		begin
+		    response = RestClient::Request.execute(
+		        :method => :post,
+		        :url => url,
+		        :headers => headers,
+		        :payload => body,
+		        :user => user_id, :password => password,
+		        :ssl_client_key => OpenSSL::PKey::RSA.new(File.read('./config/key_testworkplease.pem')),
+		        :ssl_client_cert =>  OpenSSL::X509::Certificate.new(File.read('./config/cert.pem'))
+		    )
+		rescue RestClient::ExceptionWithResponse => e
+	    	response = e.response
+	  	end
+	  	puts response[:actionCode].to_s
+
+	  		if responseCode == '00'
+	  			puts "Success!"
+	  		else
+	  			puts "Failure..."
+	  		end
+
 	  		return response
 
 	end
