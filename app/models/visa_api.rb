@@ -66,7 +66,7 @@ class VisaApi
 
 		path = "visadirect/fundstransfer/v1/pullfundstransactions"
 
-		callVisaApi(body, path)
+		callPullApi(body, path)
 
 	end
 
@@ -195,20 +195,108 @@ class VisaApi
 		rescue RestClient::ExceptionWithResponse => e
 	    	response = e.response
 	  	end
-	  		puts "URL: " << url
-	  		puts "HEADERS: " << headers.to_s
-	  		puts "BODY: " << body.to_s
+	  		puts response
+	  		return response
+
+	end
+	def callPullApi(body, path)
+
+			url = 'https://sandbox.api.visa.com/' + path
+			user_id = 'QT4SWQXB34M44J2AJS1121VNdpvQXX57ULXHpf3E4CHSWIPog'
+			password = '5A238PyD6O7Wqw'
+			headers = {'content-type'=> 'application/json', 'accept'=> 'application/json'}
+		  
+		begin
+		    response = RestClient::Request.execute(
+		        :method => :post,
+		        :url => url,
+		        :headers => headers,
+		        :payload => body,
+		        :user => user_id, :password => password,
+		        :ssl_client_key => OpenSSL::PKey::RSA.new(File.read('./config/key_testworkplease.pem')),
+		        :ssl_client_cert =>  OpenSSL::X509::Certificate.new(File.read('./config/cert.pem'))
+		    )
+		rescue RestClient::ExceptionWithResponse => e
+	    	response = e.response
+	  	end
+	  	response = JSON.parse(response)
+
+	  	if response["actionCode"] == "00"
+	  		callPushApi()
+	  	else
+	  		puts "Failure..."
+	  	end
+
 	  		return response
 
 	end
 
+		def callPushApi()
 
+			url = 'https://sandbox.api.visa.com/visadirect/fundstransfer/v1/pushfundstransactions'
+			user_id = 'QT4SWQXB34M44J2AJS1121VNdpvQXX57ULXHpf3E4CHSWIPog'
+			password = '5A238PyD6O7Wqw'
+			headers = {'content-type'=> 'application/json', 'accept'=> 'application/json'}
 
+			body = '{
+					  "acquirerCountryCode": "840",
+					  "acquiringBin": "408999",
+					  "amount": "124.05",
+					  "businessApplicationId": "AA",
+					  "cardAcceptor": {
+					    "address": {
+					      "country": "USA",
+					      "county": "San Mateo",
+					      "state": "CA",
+					      "zipCode": "94404"
+					    },
+					    "idCode": "CA-IDCode-77765",
+					    "name": "Visa Inc. USA-Foster City",
+					    "terminalId": "TID-9999"
+					  },
+					  "localTransactionDateTime": "2016-04-16T20:14:16",
+					  "merchantCategoryCode": "6012",
+					  "pointOfServiceData": {
+					    "motoECIIndicator": "0",
+					    "panEntryMode": "90",
+					    "posConditionCode": "00"
+					  },
+					  "recipientName": "rohan",
+					  "recipientPrimaryAccountNumber": "4957030420210496",
+					  "retrievalReferenceNumber": "412770451018",
+					  "senderAccountNumber": "4653459515756154",
+					  "senderAddress": "901 Metro Center Blvd",
+					  "senderCity": "Foster City",
+					  "senderCountryCode": "124",
+					  "senderName": "Mohammed Qasim",
+					  "senderReference": "",
+					  "senderStateCode": "CA",
+					  "sourceOfFundsCode": "05",
+					  "systemsTraceAuditNumber": "451018",
+					  "transactionCurrencyCode": "USD",
+					  "transactionIdentifier": "381228649430015"
+					}'
 
+		  
+			begin
+			    response = RestClient::Request.execute(
+			        :method => :post,
+			        :url => url,
+			        :headers => headers,
+			        :payload => body,
+			        :user => user_id, :password => password,
+			        :ssl_client_key => OpenSSL::PKey::RSA.new(File.read('./config/key_testworkplease.pem')),
+			        :ssl_client_cert =>  OpenSSL::X509::Certificate.new(File.read('./config/cert.pem'))
+			    )
+			rescue RestClient::ExceptionWithResponse => e
+		    	response = e.response
+		  	end
+		  	response = JSON.parse(response)
 
+		  		puts "Transaction Complete!"
+		  		puts response
 
+		  		return response
 
-
-
-
+		end
 end

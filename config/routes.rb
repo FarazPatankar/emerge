@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get '/test' => 'visa#index'
+
   post 'api/v1/pull' => 'visa#pull'
 
   post 'api/v1/push' => 'visa#push'
