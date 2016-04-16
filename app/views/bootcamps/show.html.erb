@@ -1,2 +1,25 @@
-<h1><%=@bootcamp.name%></h1>
+<h1 data-lat="<%=@bootcamp.lat%>" data-lng="<%=@bootcamp.lng%>"><%=@bootcamp.name%></h1>
 <img src="<%=@bootcamp.avatar%>">
+
+<form action="#">
+<ul class="type-list">
+    <li>
+      <input name="group1" type="radio" id="test1" />
+      <label for="test1">Red</label>
+    </li>
+    <li>
+      <input name="group1" type="radio" id="test2" />
+      <label for="test2">Yellow</label>
+    </li>
+    <li>
+      <input class="with-gap" name="group1" type="radio" id="test3"  />
+      <label for="test3">Green</label>
+    </li>
+      <li>
+        <input name="group1" type="radio" id="test4" disabled="disabled" />
+        <label for="test4">Brown</label>
+    </li>
+    </ul>
+  </form>
+
+<div id="map"></div>
