@@ -1,6 +1,12 @@
 <h1 style="display: none;" class="container" id="title" data-lat="<%=@bootcamp.lat%>" data-lng="<%=@bootcamp.lng%>"><%=@bootcamp.name%></h1>
 
-<img id="logo" src="<%=@bootcamp.avatar%>">
+<img style="margin-top: 20px;" id="logo" src="<%=@bootcamp.avatar%>">
+
+<div class="center">
+  <form action="/request" method="post">
+    <button class="waves-effect waves-light btn">Join Bootcamp</button>
+  </form>
+</div>
 
 <div id="selector" class="type-holder">
     <form action="#">

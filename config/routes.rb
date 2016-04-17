@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get '/donate/confirm' => 'visa#confirm'
 
+  get '/request' => 'bootcamps#join'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
