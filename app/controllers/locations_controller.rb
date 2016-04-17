@@ -1,13 +1,17 @@
 class LocationsController < ApplicationController
 
 	def show
-		location = Location.create(location_params)
-		render json: location
 	end
 
 	def create
-	
+		if Location.find_by(gid: location_params["gid"]) == nil
+			location = Location.create(location_params)
+			render json: location
+		else
+			render :json => "" 
+		end
 	end
+
 
 	private
 
