@@ -11,14 +11,15 @@
 <body>
 <nav class="my-nav">
 	<div class="nav-wrapper">
-		<a href="/" class="brand-logo black-text">Logo</a>
+		<a href="/" class="brand-logo white-text">Logo</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a class="black-text" href="sass.html">Sass</a></li>
-			<li><a class="black-text" href="badges.html">Components</a></li>
+			<li><a class="white-text" href="sass.html">Sass</a></li>
+			<li><a class="white-text" href="badges.html">Components</a></li>
+			<li><a class="white-text" href="/donate">Donate</a></li>
       <% if current_user %>
-        <li><a class="black-text" data-method="delete" href="/users/sign_out">Log Out</a></li>
+        <li><a class="white-text" data-method="delete" href="/users/sign_out">Log Out</a></li>
       <% else %>
-  			<li><a class="black-text" href="/users/sign_in">Log In</a></li>
+  			<li><a class="white-text" href="/users/sign_in">Log In</a></li>
       <% end %>
 		</ul>
 	</div>
@@ -26,28 +27,24 @@
 
 <%= yield %>
 
-<footer class="page-footer">
+<footer class="page-footer black">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Emerge is super cool</h5>
+                <p class="grey-text text-lighten-4">Apparently after hour 11 your brain just makes stuff up...</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">Camperzzz</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Donate</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Some Awesome link</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2016 Copyright of Team No Sleep
             </div>
           </div>
 </footer>

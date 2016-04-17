@@ -13,16 +13,16 @@
 				<%@bootcamps.each do |bootcamp|%>
 				<div class="col s4">
 					<li>
-						<div class="card card_frame">
-						    <div style="height: 350px; width: 200px; margin: 0 auto;" class="card-image waves-effect waves-block waves-light">
+						<div class="card card_frame grey darken-2">
+						    <div class="card-image waves-effect waves-block waves-light card-changer">
 						      <img class="activator"  src="<%=bootcamp.avatar%>">
 						    </div>
 						    <div class="card-content">
-						      <span class="card-title activator grey-text text-darken-4"><%=bootcamp.name%><i class="material-icons right">more_vert</i></span>
+						      <span class="card-title activator white-text text-darken-4"><%=bootcamp.name%><i class="material-icons right">more_vert</i></span>
 						      <p><a href="/bootcamps/<%=bootcamp.id%>">This is a link</a></p>
 						    </div>
-						    <div class="card-reveal">
-						      <span class="card-title grey-text text-darken-4"><%=bootcamp.name%><i class="material-icons right">close</i></span>
+						    <div class="card-reveal black">
+						      <span class="card-title white-text text-darken-4"><%=bootcamp.name%><i class="material-icons right">close</i></span>
 						      <p><%=bootcamp.description%></p>
 						    </div>
 						</div>

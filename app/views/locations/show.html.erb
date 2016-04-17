@@ -1,10 +1,18 @@
 <div class="container">
 	<div class="center row">
 		<h1><%=@location.name%></h1>
+		<% @rating.floor.times do %>
+			<i class="tiny material-icons">star</i>
+		<% end %><i class="tiny material-icons"><%=@halfstar%></i>
+		<br> 
+		<img src="<%=@location.icon%>">
 		<h6><%=@location.address%></h6>
 		<h6><%=@location.number%></h6>
 		<h6><a href="<%=@location.website%>"><%=@location.website%></a></h6>
 	</div>
+	
+		
+	
 </div>
 
 <!-- name, icon, address, number, rating, website -->
