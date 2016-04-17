@@ -3,7 +3,6 @@
 
 $(document).on('ready', function() {
 
-
 $('.upvote').on('click', function() {
 
 	var locationId = $('.upvote').data("location-id");
@@ -23,6 +22,8 @@ $('.upvote').on('click', function() {
 
 		success: function(response) {
 			console.log(response);
+
+			upvoteColor();
 		},
 
 		error: function() {
@@ -51,6 +52,8 @@ $('.downvote').on('click', function() {
 
 		success: function(response) {
 			console.log(response);
+
+			downvoteColor();
 		},
 
 		error: function() {
@@ -60,6 +63,38 @@ $('.downvote').on('click', function() {
 	});
 });
 
+
+function upvoteColor() {
+
+	$('.upvote').css({
+		color: 'green'
+	});
+
+	$('.downvote').css({
+		color: 'black'
+	});
+
+}
+
+
+
+
+function downvoteColor() {
+
+	$('.upvote').css({
+		color: 'black'
+	});
+
+	$('.downvote').css({
+		color: 'red'
+	});
+}
+
+
+
+
+
+
 	
 
-});
+}); //doc ready

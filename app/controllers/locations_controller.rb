@@ -26,7 +26,7 @@ class LocationsController < ApplicationController
 
 		@location.upvote_from current_user
 
-		render json: "Upvoted"
+		render json: @location
 
 	end
 
@@ -37,7 +37,7 @@ class LocationsController < ApplicationController
 
 		@location.downvote_from current_user
 
-		render json: "Downvoted"
+		render json: @location
 
 	end
 
