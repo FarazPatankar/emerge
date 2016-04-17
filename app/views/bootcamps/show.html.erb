@@ -6,10 +6,20 @@
     <form action="#">
       <ul class="type-list">
         <% @types.each do |selectionName|%>
+<<<<<<< HEAD
 
+=======
+          <% if selectionName == "store" %>          
+            <% selectionName = "all" %>
+          <% end %>
+>>>>>>> d2a83cfad9e90b440e10d558d617013de030e46d
           <% selectionNameChange = selectionName.gsub(/_/, ' ')%>
           <li>
-            <input name="group1" type="radio" class="store" id="<%= selectionName%>"/>
+            <input name="group1" type="radio" class="store" id="<%= selectionName%>"
+              <% if selectionName == "all" %>
+              checked="checked"
+              <% end %>
+            />
             <label for="<%=selectionName%>"><i class="tiny material-icons"><%=@icons[selectionName]%></i><%=selectionNameChange%></label>
           </li>
         <% end %>

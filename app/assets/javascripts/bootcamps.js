@@ -14,7 +14,7 @@ function createMarker(place) {
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent("<p>Name: " + place.name + "</p>" + "<p>" + "<p>Address: " + place.vicinity + "</p>" + "<a href=# >" + "...Click Here for more info" + "</a>");
+            infowindow.setContent("<p>Name: " + place.name + "</p>" + "<p>" + "<p>Address: " + place.vicinity + "</p>" + "<a href=/locations/" + place.id + ">" + "...Click Here for more info" + "</a>");
             infowindow.open(map, this);
             console.log(place);
 
@@ -65,29 +65,33 @@ function getPlace(place, status){
 }
 
 function createLocation(place) {
-    var gid = place.id;
-    var website = place.website;
-    var name = place.name;
-    var icon = place.icon;
-    var address = place.formatted_address;
-    var number = place.formatted_phone_number;
-    var rating = place.rating;
+    var gid = place.id ? place.id : "";
+    var website = place.website ? place.website : "";
+    var name = place.name ? place.name : "";
+    var icon = place.icon ? place.icon : "";
+    var address = place.formatted_address ? place.formatted_address : "";
+    var number = place.formatted_phone_number ? place.formatted_phone_number : "";
+    var rating = place.rating ? place.rating : 0;
     $.ajax({
         url: '/locations',
         type: "POST",
         data: { 
-            gid: gid,
-            website: website,
-            name: name,
-            icon: icon,
-            address: address,
-            number: number,
-            rating: rating
+            location: {
+                gid: gid,
+                website: website,
+                name: name,
+                icon: icon,
+                address: address,
+                number: number,
+                rating: rating
+            }
         },
         success: function(response){
-            console.log(response)
+            var response = response;
+            console.log(rating)
         },
         error: function(response){
+            var response = response;
             console.log(response)
         }
 
