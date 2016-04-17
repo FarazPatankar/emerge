@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'bootcamps/:bootcamp_id/users/:id/accept' => 'bootcamps#accept'
 
   get 'bootcamps/:bootcamp_id/users/:id/reject' => 'bootcamps#reject'
+
   post '/upvote/location' => 'locations#upvote'
 
   post '/downvote/location' => 'locations#downvote'

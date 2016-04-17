@@ -2,7 +2,13 @@
 
 <img style="margin-top: 20px;" id="logo" src="<%=@bootcamp.avatar%>">
 
-<% if current_user.bootcamp != @bootcamp.name %>
+<% if current_user == nil %>
+  <div class="center">
+    <form action="/bootcamps/<%=@bootcamp.id%>/request" method="post">
+      <button class="waves-effect waves-light btn">Join Bootcamp</button>
+    </form>
+  </div>
+<% elsif current_user.bootcamp != @bootcamp.name %>
   <div class="center">
     <form action="/bootcamps/<%=@bootcamp.id%>/request" method="post">
       <button class="waves-effect waves-light btn">Join Bootcamp</button>

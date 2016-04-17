@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+	before_action :authenticate_user!, :only => [:show]
 
 	def show
 		@location = Location.find_by(gid: params[:id])
@@ -14,7 +15,7 @@ class LocationsController < ApplicationController
 			location = Location.create(location_params)
 			render json: location
 		else
-			render :json => "" 
+			render :json => ""
 		end
 	end
 
