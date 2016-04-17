@@ -6,15 +6,18 @@
     <form action="#">
       <ul class="type-list">
         <% @types.each do |selectionName|%>
+          
           <% selectionNameChange = selectionName.gsub(/_/, ' ')%>
           <li>
             <input name="group1" type="radio" class="store" id="<%= selectionName%>"/>
-            <label for="<%=selectionName%>"><%=selectionNameChange%></label>
+            <label for="<%=selectionName%>"><i class="tiny material-icons"><%=@icons[selectionName]%></i><%=selectionNameChange%></label>
           </li>
+
         <% end %>
 
       </ul>
     </form>
 </div>
+      
 
 <div class="container" id="map"></div>
