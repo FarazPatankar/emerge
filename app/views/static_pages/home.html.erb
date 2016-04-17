@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col s12">
-			<h1 class="center">Camperzzzz</h1>
+			<h1 class="center">Mapperer</h1>
 		</div>
 	</div>
 
@@ -13,15 +13,15 @@
 				<%@bootcamps.each do |bootcamp|%>
 				<div class="col s4">
 					<li>
-						<div class="card card_frame entire-card">
+						<div class="card card_frame entire-card blue-grey lighten-3">
 						    <div class="card-image waves-effect waves-block waves-light card-changer">
 						      <img class="activator"  src="<%=bootcamp.avatar%>">
 						    </div>
 						    <div class="card-content">
-						      <span class="card-title activator"><%=bootcamp.name%><i class="material-icons right">more_vert</i></span>
+						      <span class="card-title activator bootcamp-name"><%=bootcamp.name%><i class="material-icons right">more_vert</i></span>
 						      <p><a href="/bootcamps/<%=bootcamp.id%>">This is a link</a></p>
 						    </div>
-						    <div class="card-reveal">
+						    <div class="card-reveal blue-grey lighten-3">
 						      <span class="card-title"><%=bootcamp.name%><i class="material-icons right">close</i></span>
 						      <p><%=bootcamp.description%></p>
 						    </div>

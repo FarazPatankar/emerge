@@ -14,9 +14,16 @@ html {
 }
 
 body {
-	// background-color: rgba(0, 0, 0, 0.7);
-	color: white !important;
+	background-color: rgba(255, 255, 255, 0.3);
+	display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+
+
+  main {
+    flex: 1 0 auto;
+  }
 
 .card-changer {
 	height: 250px;
@@ -26,10 +33,22 @@ body {
 }
 
 .entire-card, .card-reveal {
-	background-color: #58C9B9 !important;
+	// background-color: #58C9B9 !important;
+	opacity: 0.9;
 }
 
+.log-holder {
+	// padding: 50px;
 
+}
+
+.login-holder {
+	background-color: rgba(255, 255, 255, 0.8) !important;
+	color: black !important;
+	margin: 10vh 5vh 0;
+	height: 370px !important;
+	width: 300px;
+}
 
 .card .card-image img {
 
@@ -46,13 +65,18 @@ body {
 	display: inline-block;
     height: 100%;
 
+}
 
+.bootcamp-name {
+	font-size: 22px !important;
 }
 
 .center {
 	margin-top: 70px;
+	color: white !important;
 }
 
 footer {
+	color: white !important;
 	background-color: rgba(157,200,200, 0.5) !important;
 }

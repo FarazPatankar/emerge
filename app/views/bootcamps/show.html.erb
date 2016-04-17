@@ -25,12 +25,12 @@
           <% end %>
           <% selectionNameChange = selectionName.gsub(/_/, ' ')%>
           <li>
-            <input name="group1" type="radio" class="store" id="<%= selectionName%>"
+            <input name="group1" type="radio" class="store black-text" id="<%= selectionName%>"
               <% if selectionName == "all" %>
               checked="checked"
               <% end %>
             />
-            <label for="<%=selectionName%>"><i class="tiny material-icons"><%=@icons[selectionName]%></i><%=selectionNameChange%></label>
+            <label for="<%=selectionName%>" class="black-text"><i class="tiny material-icons black-text"><%=@icons[selectionName]%></i><%=selectionNameChange%></label>
           </li>
         <% end %>
       </ul>

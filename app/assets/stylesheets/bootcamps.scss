@@ -4,7 +4,7 @@
 
 #map {
 	height: 500px;
-	width: 500px;
+	width: 870px;
 }
 
 .type-list li{
@@ -25,6 +25,14 @@
 	text-align: center;
 }
 
+#selector ul li{
+	background-color: rgba(157,200,200, 0.6);
+}
+
 .thumbs-up, .thumbs-down {
+	color: black !important;
+}
+
+.gm-style-iw {
 	color: black !important;
 }
