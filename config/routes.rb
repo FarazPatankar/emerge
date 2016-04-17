@@ -23,7 +23,11 @@ Rails.application.routes.draw do
 
   get '/donate/confirm' => 'visa#confirm'
 
-  get '/request' => 'bootcamps#join'
+  post '/bootcamps/:id/request' => 'bootcamps#join'
+
+  get 'bootcamps/:bootcamp_id/users/:id/accept' => 'bootcamps#accept'
+
+  get 'bootcamps/:bootcamp_id/users/:id/reject' => 'bootcamps#reject'
 
 
   # Example of regular route:

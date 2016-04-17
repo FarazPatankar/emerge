@@ -1,0 +1,10 @@
+<body>
+    <h1><%= @user.first_name %> <%= @user.last_name%> has requested to join your community.</h1>
+    <p>
+      To accept, click: http://localhost:3000/bootcamps/<%=@bootcamp.id%>/users/<%=@user.id%>/accept.<br>
+    </p>
+    <p>
+      To accept, click: http://localhost:3000/bootcamps/<%=@bootcamp.id%>/users/<%=@user.id%>/reject.<br>
+    </p>
+    <p>Thank you for your time and have a great day!</p>
+</body>
