@@ -16,7 +16,7 @@ function createMarker(place) {
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent("<p>Name: " + place.name + "</p>" + "<p>" + "<p>Address: " + place.vicinity + "</p>" + "<a href=/locations/" + place.id + ">" + "...Click Here for more info" + "</a>");
             infowindow.open(map, this);
-            console.log(place);
+            // console.log(place);
 
             var request = {
                 placeId: place.place_id
@@ -75,7 +75,7 @@ function createLocation(place) {
     $.ajax({
         url: '/locations',
         type: "POST",
-        data: { 
+        data: {
             location: {
                 gid: gid,
                 website: website,
