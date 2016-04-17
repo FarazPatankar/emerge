@@ -23,6 +23,10 @@ Rails.application.routes.draw do
 
   get '/donate/confirm' => 'visa#confirm'
 
+  post '/upvote/location' => 'locations#upvote'
+
+  post '/downvote/location' => 'locations#downvote'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -14,6 +14,18 @@ class LocationsController < ApplicationController
 	end
 
 
+
+	def upvote
+
+	end
+
+
+	def downvote
+
+	end
+
+
+
 	private
 
 	def location_params
