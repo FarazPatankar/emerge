@@ -7,6 +7,7 @@ class VisaController < ApplicationController
   	# Confirms Transaction was complete
   	if results["actionCode"] == "00"
 
+  		puts results
 		redirect_to donate_confirm_path
 
 	else
