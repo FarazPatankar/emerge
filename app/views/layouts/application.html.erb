@@ -15,7 +15,11 @@
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a class="black-text" href="sass.html">Sass</a></li>
 			<li><a class="black-text" href="badges.html">Components</a></li>
-			<li><a class="black-text" href="collapsible.html">Donate</a></li>
+      <% if current_user %>
+        <li><a class="black-text" data-method="delete" href="/users/sign_out">Log Out</a></li>
+      <% else %>
+  			<li><a class="black-text" href="/users/sign_in">Log In</a></li>
+      <% end %>
 		</ul>
 	</div>
 </nav>
@@ -47,7 +51,8 @@
             </div>
           </div>
 </footer>
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ1cvtS0cGzzgrLIgYOOTj8tkleVVu0Jo&libraries=places&callback=initMap" async defer></script>
+  <% if params[:controller] == "bootcamps" && params[:action] == "show"%>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ1cvtS0cGzzgrLIgYOOTj8tkleVVu0Jo&libraries=places&callback=initMap" async defer></script>
+  <% end %>
 </body>
 </html>
