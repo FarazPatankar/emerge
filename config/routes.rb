@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   post '/downvote/location' => 'locations#downvote'
 
+  get '/request' => 'bootcamps#join'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
