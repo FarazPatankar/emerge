@@ -85,9 +85,11 @@ function createLocation(place) {
             rating: rating
         },
         success: function(response){
+            var response = response
             console.log(response)
         },
         error: function(response){
+            var response = response
             console.log(response)
         }
 
