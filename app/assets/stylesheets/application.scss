@@ -2,3 +2,12 @@
 @import "materialize";
 @import "bootcamps";
 @import "static_pages";
+@import "locations";
+@import "visa";
+
+.my-nav {
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: transparent;
+	box-shadow: none;
+}
