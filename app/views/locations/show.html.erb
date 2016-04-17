@@ -4,8 +4,18 @@
 		<% @rating.floor.times do %>
 			<i class="tiny material-icons">star</i>
 		<% end %><i class="tiny material-icons"><%=@halfstar%></i>
-		<br> 
+		<br>
+			<% if current_user.voted_down_on? @location %>
+				<i class="medium material-icons left-thumb downvote" style="color: red;" data-location-id='<%= @location.gid %>'>thumb_down</i>
+			<% else %>
+				<i class="medium material-icons left-thumb downvote" data-location-id='<%= @location.gid %>'>thumb_down</i>
+			<% end %>
 		<img src="<%=@location.icon%>">
+			<% if current_user.voted_up_on? @location %>
+				<i class="medium material-icons right-thumb upvote" style="color: green;" data-location-id='<%= @location.gid %>'>thumb_up</i> 
+			<% else %>
+				<i class="medium material-icons right-thumb upvote" data-location-id='<%= @location.gid %>'>thumb_up</i>
+			<% end %>
 		<h6><%=@location.address%></h6>
 		<h6><%=@location.number%></h6>
 		<h6><a href="<%=@location.website%>"><%=@location.website%></a></h6>

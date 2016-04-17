@@ -1,5 +1,5 @@
 class BootcampsController < ApplicationController
-	before_action: :show
+	before_action :authenticate_user!
 
 	def show
 		@bootcamp = Bootcamp.find(params[:id])
