@@ -1,6 +1,6 @@
-<div class="container location-holder">
+<div class="location-holder">
 	<div class="center row ">
-		<h3><%=@location.name%></h3>
+		<h3 class="location-name"><%=@location.name%></h3>
 		<% @rating.floor.times do %>
 			<i class="tiny material-icons">star</i>
 		<% end %><i class="tiny material-icons"><%=@halfstar%></i>
@@ -18,9 +18,18 @@
 				<i class="medium material-icons right-thumb upvote" data-location-id='<%= @location.gid %>'>thumb_up</i>
 			<% end %>
 			</div>
+			<br>
+			<br>
 		<h6><%=@location.address%></h6>
+			<br>
+			<br>
 		<h6><%=@location.number%></h6>
-		<h6><a href="<%=@location.website%>"><%=@location.website%></a></h6>
+			<br>
+			<br>
+		<h6><a href="<%=@location.website%>" target="_blank"><%=@location.website%></a></h6>
+			<br>
+			<br>
+		<h4><%= link_to "Back", :back %></h4>
 	</div>
 	
 		
