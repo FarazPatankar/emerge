@@ -2,6 +2,11 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find_by(gid: params[:id])
+		@rating = @location.rating
+		remainder = @rating - @rating.floor
+		if remainder > 0.5
+			@halfstar="star_half"
+		end
 	end
 
 	def create
