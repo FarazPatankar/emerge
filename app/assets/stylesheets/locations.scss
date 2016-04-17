@@ -2,3 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.left-thumb {
+	margin-right: 25px;
+	cursor: pointer;
+}
+
+.right-thumb {
+	margin-left: 25px;
+	cursor: pointer;
+}

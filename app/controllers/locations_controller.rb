@@ -19,6 +19,30 @@ class LocationsController < ApplicationController
 	end
 
 
+
+	def upvote
+
+		@location = Location.find_by(gid: params[:location])
+
+		@location.upvote_from current_user
+
+		render json: @location
+
+	end
+
+
+	def downvote
+
+		@location = Location.find_by(gid: params[:location])
+
+		@location.downvote_from current_user
+
+		render json: @location
+
+	end
+
+
+
 	private
 
 	def location_params
