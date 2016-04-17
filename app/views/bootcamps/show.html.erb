@@ -1,4 +1,4 @@
-<h1 class="container" id="title" data-lat="<%=@bootcamp.lat%>" data-lng="<%=@bootcamp.lng%>"><%=@bootcamp.name%></h1>
+<h1 style="display: none;" class="container" id="title" data-lat="<%=@bootcamp.lat%>" data-lng="<%=@bootcamp.lng%>"><%=@bootcamp.name%></h1>
 
 <img id="logo" src="<%=@bootcamp.avatar%>">
 
@@ -6,7 +6,7 @@
     <form action="#">
       <ul class="type-list">
         <% @types.each do |selectionName|%>
-          <% if selectionName == "store" %>          
+          <% if selectionName == "store" %>
             <% selectionName = "all" %>
           <% end %>
           <% selectionNameChange = selectionName.gsub(/_/, ' ')%>
@@ -22,6 +22,6 @@
       </ul>
     </form>
 </div>
-      
+
 
 <div class="container" id="map"></div>
