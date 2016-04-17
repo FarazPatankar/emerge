@@ -75,12 +75,20 @@ function createLocation(place) {
     $.ajax({
         url: '/locations',
         type: "POST",
-        data: { gid: gid, website: website, },
+        data: { 
+            gid: gid,
+            website: website,
+            name: name,
+            icon: icon,
+            address: address,
+            number: number,
+            rating: rating
+        },
         success: function(response){
-
+            console.log(response)
         },
         error: function(response){
-
+            console.log(response)
         }
 
     });
