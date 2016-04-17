@@ -14,8 +14,6 @@
 	<div class="nav-wrapper">
 		<a href="/" class="brand-logo white-text"><img src='/assets/logo.png' width='60' height='60'></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a class="white-text" href="sass.html">Sass</a></li>
-			<li><a class="white-text" href="badges.html">Components</a></li>
 			<li><a class="white-text" href="/donate">Donate</a></li>
       <% if current_user %>
         <li><a class="white-text" data-method="delete" href="/users/sign_out">Log Out</a></li>
@@ -32,6 +30,7 @@
 <%= yield %>
 
 </main>
+
 <footer class="page-footer">
           <div class="container">
             <div class="row">
