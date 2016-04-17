@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   post 'api/v1/reverse' => 'visa#reverse'
 
+  get '/donate' => 'visa#donate'
+
+  get '/donate/confirm' => 'visa#confirm'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

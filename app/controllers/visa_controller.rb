@@ -1,12 +1,19 @@
 class VisaController < ApplicationController
-	
+
   def pull
 
   	results = VisaApi.new().pullFundsTransaction
 
-  	puts results
+  	# Confirms Transaction was complete
+  	if results["actionCode"] == "00"
 
-	redirect_to root_path
+		redirect_to donate_confirm_path
+
+	else
+
+		redirect_to donate_path
+
+	end
 
   end
 
@@ -28,6 +35,9 @@ class VisaController < ApplicationController
 
 	redirect_to root_path
 
+  end
+
+  def donate
   end
 
 end

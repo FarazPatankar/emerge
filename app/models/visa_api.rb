@@ -294,7 +294,6 @@ class VisaApi
 		  	response = JSON.parse(response)
 
 		  		puts "Transaction Complete!"
-		  		puts response
 
 		  		return response
 
