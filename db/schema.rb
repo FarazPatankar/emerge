@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416173050) do
+ActiveRecord::Schema.define(version: 20160417001103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160416173050) do
     t.string   "icon"
     t.text     "address"
     t.string   "number"
-    t.integer  "rating"
+    t.float    "rating"
     t.string   "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
