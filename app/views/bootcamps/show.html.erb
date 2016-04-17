@@ -2,18 +2,20 @@
 
 <img id="logo" src="<%=@bootcamp.avatar%>">
 
-<div class="type-holder container" id="selector">
-  <form action="#">
-    <ul class="type-list">
-      <% @types.each do |selectionName|%>
-      <% selectionNameChange = selectionName.gsub(/_/, ' ')%>
-      <li>
-        <input name="group1" type="radio" class="store" id="<%= selectionName%>"/>
-        <label for="<%=selectionName%>"><%=selectionNameChange%></label>
-      </li>
-      <% end %>
-    </ul>
-  </form>
+<div id="selector" class="type-holder">
+    <form action="#">
+      <ul class="type-list">
+        <% @types.each do |selectionName|%>
+          
+          <% selectionNameChange = selectionName.gsub(/_/, ' ')%>
+          <li>
+            <input name="group1" type="radio" class="store" id="<%= selectionName%>"/>
+            <label for="<%=selectionName%>"><i class="tiny material-icons"><%=@icons[selectionName]%></i><%=selectionNameChange%></label>
+          </li>
+        <% end %>
+      </ul>
+    </form>
 </div>
+      
 
 <div class="container" id="map"></div>
