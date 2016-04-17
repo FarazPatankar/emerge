@@ -11,7 +11,7 @@
 <% elsif current_user.bootcamp != @bootcamp.name %>
   <div class="center">
     <form action="/bootcamps/<%=@bootcamp.id%>/request" method="post">
-      <button class="waves-effect waves-light btn">Join Bootcamp</button>
+      <button class="waves-effect waves-light btn join-bootcamp">Join Bootcamp</button>
     </form>
   </div>
 <% end %>
