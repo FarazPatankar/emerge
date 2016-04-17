@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
 
 	def show
+		@location = Location.find_by(gid: params[:id])
 	end
 
 	def create

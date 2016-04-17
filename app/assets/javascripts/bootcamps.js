@@ -14,7 +14,7 @@ function createMarker(place) {
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent("<p>Name: " + place.name + "</p>" + "<p>" + "<p>Address: " + place.vicinity + "</p>" + "<a href=# >" + "...Click Here for more info" + "</a>");
+            infowindow.setContent("<p>Name: " + place.name + "</p>" + "<p>" + "<p>Address: " + place.vicinity + "</p>" + "<a href=/locations/" + place.id + ">" + "...Click Here for more info" + "</a>");
             infowindow.open(map, this);
             console.log(place);
 
